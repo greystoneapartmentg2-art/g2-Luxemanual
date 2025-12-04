@@ -35,6 +35,10 @@
       padding: 0;
     }
 
+    html, body {
+      height: 100%;
+    }
+
     body {
       font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
         "Segoe UI", sans-serif;
@@ -44,7 +48,7 @@
       display: flex;
       justify-content: center;
       align-items: stretch;
-      padding: 16px;
+      padding: 12px;
     }
 
     .shell {
@@ -254,7 +258,7 @@
     /* RIGHT COLUMN (CONTENT) */
 
     .right {
-      padding: 18px 20px 16px;
+      padding: 18px 20px 10px;
       background: var(--bg);
       display: flex;
       flex-direction: column;
@@ -350,6 +354,7 @@
       gap: 6px;
       cursor: pointer;
       transition: 0.12s ease;
+      white-space: nowrap;
     }
 
     .tab-badge {
@@ -384,7 +389,7 @@
       grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.6fr);
       gap: 14px;
       margin-top: 4px;
-      min-height: 340px;
+      min-height: 320px;
     }
 
     .panel {
@@ -628,6 +633,45 @@
       margin-top: 4px;
     }
 
+    /* Ride-hailing brand badges */
+
+    .ride-brands {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 6px 0 4px;
+    }
+
+    .ride-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 500;
+      background: #f9fafb;
+      border: 1px solid rgba(15, 23, 42, 0.08);
+    }
+
+    .ride-mark {
+      width: 14px;
+      height: 14px;
+      border-radius: 4px;
+    }
+
+    .ride-mark.uber {
+      background: #000000;
+    }
+
+    .ride-mark.bolt {
+      background: #34d186;
+    }
+
+    .ride-mark.indrive {
+      background: linear-gradient(135deg, #04c75a, #1c7ed6);
+    }
+
     /* Feedback form */
 
     .feedback-form {
@@ -681,16 +725,30 @@
       margin-top: 4px;
     }
 
+    /* FOOTER */
+
+    .global-footer {
+      margin-top: 8px;
+      font-size: 11px;
+      color: var(--muted);
+      padding-top: 6px;
+      border-top: 1px solid rgba(209, 213, 219, 0.7);
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
     /* MOBILE & TABLET */
 
-    @media (max-width: 900px) {
+    @media (max-width: 1024px) {
       .shell {
         grid-template-columns: 1fr;
-        border-radius: 22px;
+        border-radius: 20px;
       }
 
-      .left {
-        padding-bottom: 18px;
+      body {
+        padding: 8px;
       }
 
       .cards-area {
@@ -703,7 +761,7 @@
       }
     }
 
-    @media (max-width: 640px) {
+    @media (max-width: 720px) {
       body {
         padding: 0;
       }
@@ -719,7 +777,7 @@
       }
 
       .right {
-        padding: 16px 14px 14px;
+        padding: 16px 14px 10px;
       }
 
       .right-header {
@@ -755,6 +813,11 @@
 
       .rec-action {
         text-align: left;
+      }
+
+      .global-footer {
+        flex-direction: column;
+        align-items: flex-start;
       }
     }
   </style>
@@ -801,7 +864,7 @@
 
         <div class="address">
           <span class="label">Property address</span><br />
-          6B Ogalade Close, Victoria Island, Lagos.
+          G2 Luxe, 6B Ogalade Close, Victoria Island, Lagos.
         </div>
 
         <div class="divider"></div>
@@ -922,6 +985,12 @@
           </div>
         </article>
       </div>
+
+      <!-- FOOTER -->
+      <footer class="global-footer">
+        <span>© <span id="yearSpan"></span> G2 Luxe · Victoria Island, Lagos</span>
+        <span>Digital guest guide · Private use only</span>
+      </footer>
     </section>
   </div>
 
@@ -1080,6 +1149,66 @@
             <li><strong>Washing machine:</strong> A quick-wash programme (30–40 minutes) is usually sufficient.</li>
             <li><strong>Power backup:</strong> The inverter supports lighting and Wi-Fi during short outages.</li>
           </ul>
+        `,
+      },
+      {
+        id: "taxi",
+        title: "Taxi & ride-hailing",
+        tag: "Uber · Bolt · inDrive",
+        updated: "2025-10-20",
+        keywords:
+          "taxi ride hailing uber bolt indrive transport airport pick up victoria island",
+        html: `
+          <p>
+            For getting around Lagos comfortably, we recommend using trusted
+            ride-hailing apps. G2 Luxe is well-located for quick pickups on
+            Victoria Island.
+          </p>
+
+          <div class="ride-brands">
+            <div class="ride-badge">
+              <span class="ride-mark uber"></span>
+              <span>Uber</span>
+            </div>
+            <div class="ride-badge">
+              <span class="ride-mark bolt"></span>
+              <span>Bolt</span>
+            </div>
+            <div class="ride-badge">
+              <span class="ride-mark indrive"></span>
+              <span>inDrive</span>
+            </div>
+          </div>
+
+          <div class="two-col-list">
+            <div>
+              <div class="bullet-title">Booking tips</div>
+              <p>
+                Set your pickup location as <strong>G2 Luxe, 6B Ogalade Close,
+                Victoria Island</strong>. Confirm the driver’s name, plate number
+                and car model before entering.
+              </p>
+            </div>
+            <div>
+              <div class="bullet-title">Payment</div>
+              <p>
+                Most guests use card payments in the app. Cash may also be
+                available depending on the driver and service.
+              </p>
+            </div>
+          </div>
+
+          <ul class="list">
+            <li>For late-night rides, wait inside the compound until your driver arrives.</li>
+            <li>If you are unsure about a driver or route, feel free to message Queen.</li>
+          </ul>
+
+          <p style="margin-top:6px;font-size:12px;color:#6b7280;">
+            Quick access on your device:
+            <a href="https://m.uber.com" target="_blank" rel="noopener noreferrer">Uber</a> ·
+            <a href="https://bolt.eu" target="_blank" rel="noopener noreferrer">Bolt</a> ·
+            <a href="https://indrive.com" target="_blank" rel="noopener noreferrer">inDrive</a>
+          </p>
         `,
       },
       {
@@ -1297,6 +1426,7 @@
     const mapTabs = document.getElementById("mapTabs");
     const mapFrame = document.getElementById("mapFrame");
     const recList = document.getElementById("recList");
+    const yearSpan = document.getElementById("yearSpan");
 
     let activeSectionId = "welcome";
 
@@ -1433,6 +1563,7 @@
     renderMainTabs();
     renderActiveSection();
     setMapType("food");
+    yearSpan.textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
