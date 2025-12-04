@@ -1,0 +1,1438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>G2 Luxe Guest Manual</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Professional font: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root {
+      --navy: #07152f;
+      --navy-soft: #0d2144;
+      --navy-light: #1e2b4b;
+      --gold: #d4af37;
+      --gold-soft: #f4d25c;
+      --bg: #f3f4f6;
+      --text: #111827;
+      --muted: #6b7280;
+      --radius-lg: 20px;
+      --radius-md: 16px;
+      --shadow-soft: 0 18px 45px rgba(7, 21, 47, 0.18);
+      --shadow-subtle: 0 10px 24px rgba(7, 21, 47, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top left, #f7f9ff, #e5e7eb);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: stretch;
+      padding: 16px;
+    }
+
+    .shell {
+      width: 100%;
+      max-width: 1180px;
+      border-radius: 28px;
+      background: #ffffff;
+      box-shadow: var(--shadow-soft);
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(0, 2fr);
+      min-height: 560px;
+    }
+
+    /* LEFT COLUMN (BRAND) */
+
+    .left {
+      background: linear-gradient(155deg, var(--navy), #020819);
+      color: #f9fafb;
+      padding: 24px 22px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .brand-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .brand-logo {
+      width: 54px;
+      height: 54px;
+      border-radius: 18px;
+      background: radial-gradient(circle at top, #ffffff, #e0e4ff);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 22px;
+      letter-spacing: 0.12em;
+      color: var(--navy);
+      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.45);
+    }
+
+    .brand-text h1 {
+      font-size: 18px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .brand-text p {
+      font-size: 13px;
+      opacity: 0.85;
+      margin-top: 2px;
+    }
+
+    .tagline {
+      margin-top: 2px;
+      font-size: 12px;
+      opacity: 0.85;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .pill {
+      font-size: 11px;
+      padding: 4px 9px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.46);
+      border: 1px solid rgba(249, 250, 251, 0.16);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .pill-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: var(--gold-soft);
+    }
+
+    .left-card {
+      background: linear-gradient(145deg, var(--navy-soft), #060b1a);
+      border-radius: var(--radius-md);
+      padding: 14px 14px 12px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.55);
+      font-size: 13px;
+      line-height: 1.6;
+      border: 1px solid rgba(212, 175, 55, 0.35);
+    }
+
+    .left-card h2 {
+      font-size: 14px;
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 6px 14px;
+      font-size: 12px;
+      margin-top: 8px;
+    }
+
+    .label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      opacity: 0.8;
+    }
+
+    .value {
+      font-weight: 500;
+      margin-top: 1px;
+    }
+
+    .address {
+      margin-top: 8px;
+      font-size: 12px;
+    }
+
+    .divider {
+      height: 1px;
+      width: 100%;
+      background: linear-gradient(
+        to right,
+        transparent,
+        rgba(209, 213, 219, 0.7),
+        transparent
+      );
+      margin: 10px 0 6px;
+    }
+
+    .contact-block {
+      margin-top: 4px;
+    }
+
+    .contact-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      align-items: center;
+      margin-top: 4px;
+      font-size: 13px;
+    }
+
+    .contact-row strong {
+      font-weight: 600;
+    }
+
+    .contact-actions {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .btn-ghost {
+      border-radius: 999px;
+      border: 1px solid rgba(249, 250, 251, 0.85);
+      padding: 4px 10px;
+      font-size: 11px;
+      text-decoration: none;
+      color: #f9fafb;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(15, 23, 42, 0.7);
+    }
+
+    .btn-ghost span {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .btn-ghost:hover {
+      background: rgba(15, 23, 42, 0.9);
+    }
+
+    .emergency {
+      margin-top: 8px;
+      font-size: 12px;
+      opacity: 0.9;
+    }
+
+    .emergency span {
+      font-weight: 500;
+      color: var(--gold-soft);
+    }
+
+    .left-footer {
+      margin-top: auto;
+      font-size: 11px;
+      opacity: 0.78;
+    }
+
+    /* RIGHT COLUMN (CONTENT) */
+
+    .right {
+      padding: 18px 20px 16px;
+      background: var(--bg);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .right-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .page-title {
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+    }
+
+    .page-sub {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    .search-wrap {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .search-box {
+      position: relative;
+      flex: 1 1 210px;
+      max-width: 260px;
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 9px 34px;
+      border-radius: 999px;
+      border: 1px solid rgba(15, 23, 42, 0.1);
+      font-size: 13px;
+      outline: none;
+      background: #ffffff;
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.06);
+    }
+
+    .search-box::before {
+      content: "";
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 12px;
+      height: 12px;
+      border-radius: 999px;
+      border: 2px solid rgba(31, 41, 55, 0.7);
+      box-shadow: 4px 4px 0 0 rgba(31, 41, 55, 0.7) inset;
+      opacity: 0.7;
+    }
+
+    .badge-soft {
+      font-size: 11px;
+      padding: 5px 9px;
+      border-radius: 999px;
+      background: #fdf6e3;
+      color: #92400e;
+      border: 1px solid rgba(212, 175, 55, 0.35);
+      white-space: nowrap;
+    }
+
+    /* Tabs */
+
+    .tab-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 4px;
+    }
+
+    .tab-btn {
+      padding: 7px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(15, 23, 42, 0.08);
+      background: #ffffff;
+      font-size: 13px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+      transition: 0.12s ease;
+    }
+
+    .tab-badge {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.16);
+    }
+
+    .tab-btn.active {
+      background: linear-gradient(135deg, var(--navy-soft), var(--navy));
+      color: #f9fafb;
+      border-color: transparent;
+      box-shadow: 0 10px 22px rgba(7, 21, 47, 0.5);
+      transform: translateY(-1px);
+    }
+
+    .tab-btn.active .tab-badge {
+      background: var(--gold-soft);
+    }
+
+    .tab-btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 16px rgba(15, 23, 42, 0.12);
+    }
+
+    /* Layout: content + map */
+
+    .cards-area {
+      flex: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.6fr);
+      gap: 14px;
+      margin-top: 4px;
+      min-height: 340px;
+    }
+
+    .panel {
+      background: #ffffff;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-subtle);
+      padding: 14px 15px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      border: 1px solid rgba(229, 231, 235, 0.85);
+    }
+
+    .panel-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 10px;
+    }
+
+    .panel-title {
+      font-size: 15px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .panel-title-mark {
+      width: 12px;
+      height: 12px;
+      border-radius: 4px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-soft));
+    }
+
+    .panel-sub {
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .pill-small {
+      font-size: 11px;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: #eff6ff;
+      color: #1d4ed8;
+      white-space: nowrap;
+    }
+
+    .panel-body {
+      font-size: 13px;
+      line-height: 1.6;
+      color: #111827;
+      max-height: 280px;
+      overflow-y: auto;
+      padding-right: 4px;
+    }
+
+    .panel-body::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    .panel-body::-webkit-scrollbar-thumb {
+      background: rgba(148, 163, 184, 0.9);
+      border-radius: 999px;
+    }
+
+    .panel-footer {
+      font-size: 11px;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .two-col-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 8px 14px;
+      margin-top: 6px;
+    }
+
+    .bullet-title {
+      font-weight: 600;
+      margin-bottom: 2px;
+      font-size: 12px;
+    }
+
+    .two-col-list p {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .wifi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 8px;
+      margin-top: 6px;
+    }
+
+    .wifi-card {
+      border-radius: 14px;
+      border: 1px dashed rgba(15, 23, 42, 0.3);
+      background: #f9fafb;
+      padding: 8px 10px;
+      font-size: 12px;
+    }
+
+    .wifi-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--muted);
+      margin-bottom: 3px;
+    }
+
+    .wifi-value code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+        "Liberation Mono", "Courier New", monospace;
+      font-size: 12px;
+      background: rgba(15, 23, 42, 0.06);
+      padding: 2px 5px;
+      border-radius: 6px;
+    }
+
+    .btn-copy {
+      border: none;
+      border-radius: 999px;
+      padding: 3px 8px;
+      font-size: 11px;
+      margin-left: 6px;
+      cursor: pointer;
+      background: var(--navy-soft);
+      color: #f9fafb;
+    }
+
+    .list {
+      margin-top: 4px;
+      padding-left: 16px;
+    }
+
+    .list li {
+      margin-bottom: 3px;
+    }
+
+    /* Recs + Map */
+
+    .map-type-row {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      margin-bottom: 6px;
+      margin-top: 4px;
+    }
+
+    .map-pill {
+      font-size: 11px;
+      padding: 4px 9px;
+      border-radius: 999px;
+      border: 1px solid rgba(15, 23, 42, 0.12);
+      background: #f9fafb;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .map-pill-indicator {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.2);
+    }
+
+    .map-pill.active {
+      background: var(--navy);
+      color: #f9fafb;
+      border-color: transparent;
+    }
+
+    .map-pill.active .map-pill-indicator {
+      background: var(--gold-soft);
+    }
+
+    .rec-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 8px;
+      margin-top: 6px;
+    }
+
+    .rec-card {
+      border-radius: 14px;
+      border: 1px solid rgba(15, 23, 42, 0.06);
+      background: #f9fafb;
+      padding: 8px 10px;
+      font-size: 12px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+      gap: 4px 10px;
+      align-items: center;
+    }
+
+    .rec-name {
+      font-weight: 600;
+      font-size: 12px;
+    }
+
+    .rec-meta {
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .rec-meta span {
+      margin-right: 8px;
+    }
+
+    .rec-action {
+      text-align: right;
+    }
+
+    .btn-small-link {
+      font-size: 11px;
+      text-decoration: none;
+      color: var(--navy-soft);
+      font-weight: 500;
+    }
+
+    .map-frame {
+      width: 100%;
+      border-radius: 16px;
+      border: none;
+      min-height: 205px;
+      margin-top: 8px;
+    }
+
+    .map-note {
+      font-size: 11px;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    /* Feedback form */
+
+    .feedback-form {
+      display: grid;
+      gap: 8px;
+      margin-top: 6px;
+    }
+
+    .feedback-row {
+      display: grid;
+      gap: 4px;
+    }
+
+    .feedback-row label {
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    .feedback-row input,
+    .feedback-row textarea,
+    .feedback-row select {
+      border-radius: 10px;
+      border: 1px solid rgba(15, 23, 42, 0.14);
+      padding: 7px 9px;
+      font-size: 13px;
+      font-family: inherit;
+      outline: none;
+      background: #ffffff;
+    }
+
+    .feedback-row textarea {
+      min-height: 80px;
+      resize: vertical;
+    }
+
+    .btn-primary {
+      border: none;
+      border-radius: 999px;
+      padding: 8px 14px;
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      background: linear-gradient(135deg, var(--navy-soft), var(--navy));
+      color: #f9fafb;
+      justify-self: flex-start;
+    }
+
+    .feedback-note {
+      font-size: 11px;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    /* MOBILE & TABLET */
+
+    @media (max-width: 900px) {
+      .shell {
+        grid-template-columns: 1fr;
+        border-radius: 22px;
+      }
+
+      .left {
+        padding-bottom: 18px;
+      }
+
+      .cards-area {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+
+      .panel-body {
+        max-height: none;
+      }
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 0;
+      }
+
+      .shell {
+        border-radius: 0;
+        max-width: 100%;
+        min-height: 100vh;
+      }
+
+      .left {
+        padding: 18px 16px 16px;
+      }
+
+      .right {
+        padding: 16px 14px 14px;
+      }
+
+      .right-header {
+        align-items: flex-start;
+      }
+
+      .search-wrap {
+        width: 100%;
+        justify-content: flex-start;
+      }
+
+      .search-box {
+        max-width: none;
+      }
+
+      .tab-row {
+        overflow-x: auto;
+        padding-bottom: 4px;
+      }
+
+      .tab-row::-webkit-scrollbar {
+        height: 3px;
+      }
+
+      .panel {
+        padding: 12px 12px 12px;
+      }
+
+      .rec-card {
+        grid-template-columns: 1fr;
+        text-align: left;
+      }
+
+      .rec-action {
+        text-align: left;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <!-- LEFT SIDE -->
+    <section class="left">
+      <header class="brand-row">
+        <div class="brand-logo">G2</div>
+        <div class="brand-text">
+          <h1>G2 LUXE</h1>
+          <p>Two-bedroom serviced apartment</p>
+          <p class="tagline">6B Ogalade Close, Victoria Island, Lagos</p>
+        </div>
+      </header>
+
+      <div class="pill-row">
+        <span class="pill"><span class="pill-dot"></span> Designed for 1–2 adults for comfort</span>
+        <span class="pill"><span class="pill-dot"></span> Spacious 2-bedroom luxury finish</span>
+        <span class="pill"><span class="pill-dot"></span> High-speed Wi-Fi & inverter backup</span>
+      </div>
+
+      <article class="left-card">
+        <h2>Stay summary</h2>
+        <div class="grid-2">
+          <div>
+            <div class="label">Check-in</div>
+            <div class="value">2:00 PM</div>
+          </div>
+          <div>
+            <div class="label">Check-out</div>
+            <div class="value">11:00 AM</div>
+          </div>
+          <div>
+            <div class="label">Apartment type</div>
+            <div class="value">2-bedroom, fully serviced</div>
+          </div>
+          <div>
+            <div class="label">Ideal occupancy</div>
+            <div class="value">1–2 adults for comfort</div>
+          </div>
+        </div>
+
+        <div class="address">
+          <span class="label">Property address</span><br />
+          G2 Luxe, 6B Ogalade Close, Victoria Island, Lagos.
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="contact-block">
+          <div class="label">Your host</div>
+          <div class="contact-row">
+            <strong>Queen Quadri</strong>
+            <div class="contact-actions">
+              <a class="btn-ghost" href="tel:08166576005">
+                <span>Call</span>
+              </a>
+              <a
+                class="btn-ghost"
+                href="https://wa.me/2348166576005?text=Hi%20Queen,%20I'm%20a%20guest%20at%20G2%20Luxe."
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span>WhatsApp</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <p class="emergency">
+          <span>Security:</span> the building has on-site security 24/7 and a
+          reputable hospital located next door for additional peace of mind.
+        </p>
+      </article>
+
+      <footer class="left-footer">
+        A calm, secure and private base in the heart of Victoria Island.
+      </footer>
+    </section>
+
+    <!-- RIGHT SIDE -->
+    <section class="right">
+      <header class="right-header">
+        <div>
+          <div class="page-title">Guest Manual</div>
+          <div class="page-sub">
+            Everything you need for your stay at G2 Luxe.
+          </div>
+        </div>
+        <div class="search-wrap">
+          <div class="search-box">
+            <input
+              id="searchInput"
+              type="text"
+              placeholder="Search: wifi, rules, check-in, dining..."
+            />
+          </div>
+          <span class="badge-soft">Tap a section or start typing</span>
+        </div>
+      </header>
+
+      <!-- MAIN TABS -->
+      <nav class="tab-row" id="mainTabs"></nav>
+
+      <!-- CONTENT + MAP -->
+      <div class="cards-area">
+        <!-- LEFT: text content -->
+        <article class="panel">
+          <header class="panel-header">
+            <div class="panel-title">
+              <span class="panel-title-mark"></span>
+              <span id="panelTitle">Welcome & Overview</span>
+            </div>
+            <span class="pill-small" id="panelTag">Start here</span>
+          </header>
+          <div class="panel-body" id="panelBody"></div>
+          <footer class="panel-footer">
+            <span id="panelUpdated">Last updated: —</span>
+            <span>G2 Luxe · Victoria Island</span>
+          </footer>
+        </article>
+
+        <!-- RIGHT: Nearby recommendations + map -->
+        <article class="panel">
+          <header class="panel-header">
+            <div class="panel-title">
+              <span class="panel-title-mark"></span>
+              <span>Nearby recommendations</span>
+            </div>
+            <span class="pill-small">Curated around Victoria Island</span>
+          </header>
+
+          <div class="panel-body" style="max-height:none;">
+            <div class="map-type-row" id="mapTabs">
+              <button class="map-pill active" data-type="food">
+                <span class="map-pill-indicator"></span> Food & dining
+              </button>
+              <button class="map-pill" data-type="bars">
+                <span class="map-pill-indicator"></span> Bars & lounges
+              </button>
+              <button class="map-pill" data-type="activities">
+                <span class="map-pill-indicator"></span> Activities & sightseeing
+              </button>
+              <button class="map-pill" data-type="travel">
+                <span class="map-pill-indicator"></span> Travel agencies
+              </button>
+            </div>
+
+            <div class="rec-list" id="recList"></div>
+
+            <iframe
+              id="mapFrame"
+              class="map-frame"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              src=""
+            ></iframe>
+
+            <p class="map-note">
+              Times and ratings are indicative only. Use “Open in Maps” for
+              live directions from your current location.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+  </div>
+
+  <!-- ========= DATA + LOGIC ========= -->
+  <script>
+    /* ---------- LEFT SIDE CONTENT SECTIONS ---------- */
+
+    const SECTIONS = [
+      {
+        id: "welcome",
+        title: "Welcome & overview",
+        tag: "Start here",
+        updated: "2025-10-20",
+        keywords:
+          "welcome overview introduction g2 luxe victoria island apartment",
+        html: `
+          <p>
+            Welcome to <strong>G2 Luxe</strong>, a contemporary two-bedroom
+            apartment thoughtfully set up for a relaxed, premium stay in the
+            heart of Victoria Island.
+          </p>
+          <ul class="list">
+            <li>Self check-in with a smart lock for flexible arrival.</li>
+            <li>Ideal for 1–2 adults looking for comfort, privacy and security.</li>
+            <li>Fast Wi-Fi, inverter backup for essentials and a calm residential feel.</li>
+          </ul>
+          <div class="two-col-list">
+            <div>
+              <div class="bullet-title">Perfect for</div>
+              <p>Business trips, couples’ stays, and short city breaks.</p>
+            </div>
+            <div>
+              <div class="bullet-title">Neighbourhood</div>
+              <p>Central, secure and close to dining, lounges and the waterfront.</p>
+            </div>
+          </div>
+        `,
+      },
+      {
+        id: "aptInfo",
+        title: "Apartment information",
+        tag: "Space, Wi-Fi & rules",
+        updated: "2025-10-20",
+        keywords:
+          "apartment info amenities layout two bedroom living kitchen balcony wifi rules check in check out",
+        html: `
+          <p>
+            G2 Luxe is a <strong>two-bedroom, fully serviced apartment</strong>
+            with a bright living area, functional workspace and a calm sleeping
+            environment.
+          </p>
+          <div class="two-col-list">
+            <div>
+              <div class="bullet-title">Living area</div>
+              <p>Comfortable seating, smart TV and soft lighting for evenings in.</p>
+            </div>
+            <div>
+              <div class="bullet-title">Bedrooms</div>
+              <p>Two well-appointed rooms with quality bedding and air-conditioning.</p>
+            </div>
+            <div>
+              <div class="bullet-title">Kitchen</div>
+              <p>Fridge, microwave, cooker, kettle, basic cookware and tableware.</p>
+            </div>
+            <div>
+              <div class="bullet-title">Laundry</div>
+              <p>Washing machine, iron and ironing board for longer stays.</p>
+            </div>
+          </div>
+
+          <hr style="border:none;border-top:1px solid #e5e7eb;margin:10px 0 6px;" />
+
+          <div class="bullet-title">Wi-Fi details</div>
+          <div class="wifi-grid">
+            <div class="wifi-card">
+              <div class="wifi-label">Network</div>
+              <div class="wifi-value">
+                <code id="wifiName">geetwo_G2</code>
+                <button class="btn-copy" data-copy-target="wifiName">Copy</button>
+              </div>
+            </div>
+            <div class="wifi-card">
+              <div class="wifi-label">Password</div>
+              <div class="wifi-value">
+                <code id="wifiPassword">geetwo_2025</code>
+                <button class="btn-copy" data-copy-target="wifiPassword">Copy</button>
+              </div>
+            </div>
+          </div>
+
+          <hr style="border:none;border-top:1px solid #e5e7eb;margin:10px 0 6px;" />
+
+          <div class="two-col-list">
+            <div>
+              <div class="bullet-title">Check-in time</div>
+              <p>Standard check-in is <strong>2:00 PM</strong>.</p>
+            </div>
+            <div>
+              <div class="bullet-title">Check-out time</div>
+              <p>Standard check-out is <strong>11:00 AM</strong>.</p>
+            </div>
+          </div>
+
+          <div class="bullet-title" style="margin-top:8px;">House rules</div>
+          <ul class="list">
+            <li>No smoking inside the apartment.</li>
+            <li>Please keep noise to a minimum after <strong>10:00 PM</strong> to respect neighbours.</li>
+            <li>Switch off lights, AC and appliances when not in use.</li>
+            <li>Handle items and furniture with care — treat the space like your own home.</li>
+          </ul>
+        `,
+      },
+      {
+        id: "checkin",
+        title: "Check-in instructions",
+        tag: "Arrival",
+        updated: "2025-10-20",
+        keywords: "check in smart lock arrival gate security",
+        html: `
+          <ol class="list">
+            <li>Arrive at <strong>6B Ogalade Close, Victoria Island</strong> and let security know you are staying at <strong>G2 Luxe</strong>.</li>
+            <li>Proceed to the apartment door and enter the smart-lock code (provided before your stay).</li>
+            <li>Once inside, you will find a key set on the wall hook by the entrance.</li>
+            <li>Wi-Fi details and AC remotes are placed on the TV console and bedside tables.</li>
+          </ol>
+          <p>If you encounter any issues on arrival, please call or message your host, Queen Quadri.</p>
+        `,
+      },
+      {
+        id: "checkout",
+        title: "Check-out instructions",
+        tag: "Departure",
+        updated: "2025-10-20",
+        keywords: "check out departure leaving cleaning key",
+        html: `
+          <ol class="list">
+            <li>Check-out time is <strong>11:00 AM</strong> unless a different time has been agreed.</li>
+            <li>Kindly wash used dishes or start a quick wash cycle if available.</li>
+            <li>Place used towels in the laundry basket provided.</li>
+            <li>Switch off all lights, AC units, TV and the water heater.</li>
+            <li>Ensure the door is locked and the smart-lock digits are scrambled.</li>
+          </ol>
+          <p>A short message when you leave helps us prepare the apartment for the next guest.</p>
+        `,
+      },
+      {
+        id: "appliances",
+        title: "Appliances & utilities",
+        tag: "How things work",
+        updated: "2025-10-20",
+        keywords: "appliances ac water heater washing machine inverter power",
+        html: `
+          <ul class="list">
+            <li><strong>Air-conditioning:</strong> Use the labelled remotes. For comfort and efficiency, keep settings around 23–25°C.</li>
+            <li><strong>Water heater:</strong> Switch located near the bathroom door. Turn off after use for safety.</li>
+            <li><strong>Washing machine:</strong> A quick-wash programme (30–40 minutes) is usually sufficient.</li>
+            <li><strong>Power backup:</strong> The inverter supports lighting and Wi-Fi during short outages.</li>
+          </ul>
+        `,
+      },
+      {
+        id: "wine",
+        title: "In-house wine cellar",
+        tag: "Order a bottle",
+        updated: "2025-10-20",
+        keywords: "wine cellar in house drinks bottle prices red white sparkling",
+        html: `
+          <p>
+            G2 Luxe offers a curated in-house wine selection. Prices are per bottle
+            and can be added to your stay. Send a message to Queen with the wine
+            name and quantity to place an order.
+          </p>
+          <div class="two-col-list">
+            <div>
+              <div class="bullet-title">Red wines</div>
+              <p><strong>G2 House Red</strong> – ₦18,000<br/>
+                 <span style="color:#6b7280;font-size:11px;">Smooth, medium-bodied; pairs well with grilled dishes and pasta.</span></p>
+              <p><strong>Cabernet Sauvignon Reserve</strong> – ₦26,000<br/>
+                 <span style="color:#6b7280;font-size:11px;">Richer profile with dark fruit and oak notes.</span></p>
+            </div>
+            <div>
+              <div class="bullet-title">White & sparkling</div>
+              <p><strong>Chardonnay</strong> – ₦20,000<br/>
+                 <span style="color:#6b7280;font-size:11px;">Fresh and lightly oaked; ideal with seafood and salads.</span></p>
+              <p><strong>Prosecco Brut</strong> – ₦24,000<br/>
+                 <span style="color:#6b7280;font-size:11px;">Dry sparkling wine, perfect for toasts and celebrations.</span></p>
+            </div>
+          </div>
+          <p style="margin-top:6px;font-size:12px;color:#6b7280;">
+            Selection is subject to availability. If you have a particular preference,
+            contact us ahead of your stay and we will do our best to arrange it.
+          </p>
+        `,
+      },
+      {
+        id: "safety",
+        title: "Safety & nearby hospital",
+        tag: "Reassurance",
+        updated: "2025-10-20",
+        keywords: "safety security hospital next door",
+        html: `
+          <p>
+            Your safety and comfort are priorities at G2 Luxe. The building has
+            professional security on duty around the clock, and access to the
+            apartment is controlled via the estate gate and smart lock.
+          </p>
+          <ul class="list">
+            <li>Security personnel are on site 24/7 and monitor access to the property.</li>
+            <li>A reputable hospital is located <strong>next door</strong> for medical support if ever required.</li>
+            <li>For any concerns about safety during your stay, contact Queen immediately.</li>
+          </ul>
+        `,
+      },
+      {
+        id: "feedback",
+        title: "Leave feedback",
+        tag: "Help us improve",
+        updated: "2025-10-20",
+        keywords: "feedback review rating comments email greystone",
+        html: `
+          <p>
+            We value every stay and continuously refine G2 Luxe based on guest
+            feedback. Share your thoughts so we can keep improving.
+          </p>
+          <form
+            class="feedback-form"
+            id="feedbackForm"
+            action="mailto:greystoneapartmentg2@gmail.com"
+            method="POST"
+            enctype="text/plain"
+          >
+            <div class="feedback-row">
+              <label for="fbName">Name (optional)</label>
+              <input id="fbName" name="Name" type="text" placeholder="Your name" />
+            </div>
+            <div class="feedback-row">
+              <label for="fbEmail">Email (optional)</label>
+              <input id="fbEmail" name="Email" type="email" placeholder="you@example.com" />
+            </div>
+            <div class="feedback-row">
+              <label for="fbRating">Overall rating</label>
+              <select id="fbRating" name="Rating">
+                <option value="5">Excellent</option>
+                <option value="4">Very good</option>
+                <option value="3">Good</option>
+                <option value="2">Needs improvement</option>
+                <option value="1">Poor</option>
+              </select>
+            </div>
+            <div class="feedback-row">
+              <label for="fbMessage">Comments</label>
+              <textarea
+                id="fbMessage"
+                name="Comments"
+                placeholder="What worked well? What could be better?"
+                required
+              ></textarea>
+            </div>
+            <button type="submit" class="btn-primary">Send feedback</button>
+            <div class="feedback-note">
+              Your email app will open with the message addressed to
+              <strong>greystoneapartmentg2@gmail.com</strong>.
+            </div>
+          </form>
+        `,
+      },
+    ];
+
+    /* ---------- NEARBY RECOMMENDATIONS ---------- */
+
+    const RECOMMENDATIONS = {
+      food: [
+        {
+          name: "Ocean View Bistro",
+          type: "Modern Nigerian & continental",
+          eta: "5–7 min drive",
+          rating: "4.6",
+          price: "₦₦",
+          maps:
+            "https://www.google.com/maps/search/?api=1&query=Ocean+View+Bistro+Victoria+Island+Lagos",
+        },
+        {
+          name: "VI Corner Café",
+          type: "Coffee & light meals",
+          eta: "10–12 min walk",
+          rating: "4.4",
+          price: "₦₦",
+          maps:
+            "https://www.google.com/maps/search/?api=1&query=VI+Corner+Cafe+Victoria+Island+Lagos",
+        },
+      ],
+      bars: [
+        {
+          name: "Skyline Lounge",
+          type: "Rooftop bar & small plates",
+          eta: "8–10 min drive",
+          rating: "4.5",
+          price: "₦₦₦",
+          maps:
+            "https://www.google.com/maps/search/?api=1&query=Skyline+Lounge+Victoria+Island+Lagos",
+        },
+        {
+          name: "VI Social Club",
+          type: "Cocktails & music",
+          eta: "6–8 min drive",
+          rating: "4.3",
+          price: "₦₦₦",
+          maps:
+            "https://www.google.com/maps/search/?api=1&query=VI+Social+Club+Lagos",
+        },
+      ],
+      activities: [
+        {
+          name: "Tarkwa Bay (via jetty)",
+          type: "Beach & water activities",
+          eta: "20–30 min (jetty + boat)",
+          rating: "4.5",
+          price: "₦₦",
+          maps:
+            "https://www.google.com/maps/search/?api=1&query=Tarkwa+Bay+Lagos",
+        },
+        {
+          name: "Nike Art Gallery",
+          type: "Art, culture & shopping",
+          eta: "15–20 min drive",
+          rating: "4.7",
+          price: "₦₦",
+          maps:
+            "https://www.google.com/maps/search/?api=1&query=Nike+Art+Gallery+Lagos",
+        },
+      ],
+      travel: [
+        {
+          name: "VI Travel Hub",
+          type: "Tours & airport transfers",
+          eta: "5–10 min drive",
+          rating: "4.4",
+          price: "₦₦₦",
+          maps:
+            "https://www.google.com/maps/search/?api=1&query=Travel+agency+Victoria+Island+Lagos",
+        },
+        {
+          name: "Island Tours & Safaris",
+          type: "City tours & day trips",
+          eta: "10–15 min drive",
+          rating: "4.2",
+          price: "₦₦₦",
+          maps:
+            "https://www.google.com/maps/search/?api=1&query=Island+Tours+Lagos",
+        },
+      ],
+    };
+
+    const MAP_URLS = {
+      food:
+        "https://www.google.com/maps?q=restaurants+near+Victoria+Island+Lagos&output=embed",
+      bars:
+        "https://www.google.com/maps?q=bars+and+lounges+near+Victoria+Island+Lagos&output=embed",
+      activities:
+        "https://www.google.com/maps?q=sightseeing+near+Victoria+Island+Lagos&output=embed",
+      travel:
+        "https://www.google.com/maps?q=travel+agencies+near+Victoria+Island+Lagos&output=embed",
+    };
+
+    /* ---------- DOM ELEMENTS ---------- */
+
+    const mainTabs = document.getElementById("mainTabs");
+    const panelTitle = document.getElementById("panelTitle");
+    const panelTag = document.getElementById("panelTag");
+    const panelBody = document.getElementById("panelBody");
+    const panelUpdated = document.getElementById("panelUpdated");
+    const searchInput = document.getElementById("searchInput");
+    const mapTabs = document.getElementById("mapTabs");
+    const mapFrame = document.getElementById("mapFrame");
+    const recList = document.getElementById("recList");
+
+    let activeSectionId = "welcome";
+
+    /* ---------- LEFT PANEL LOGIC ---------- */
+
+    function renderMainTabs() {
+      mainTabs.innerHTML = "";
+      SECTIONS.forEach((section) => {
+        const btn = document.createElement("button");
+        btn.className =
+          "tab-btn" + (section.id === activeSectionId ? " active" : "");
+        btn.dataset.id = section.id;
+        btn.innerHTML = `
+          <span class="tab-badge"></span>
+          <span>${section.title}</span>
+        `;
+        btn.addEventListener("click", () => {
+          activeSectionId = section.id;
+          searchInput.value = "";
+          renderMainTabs();
+          renderActiveSection();
+        });
+        mainTabs.appendChild(btn);
+      });
+    }
+
+    function renderActiveSection() {
+      const query = searchInput.value.trim().toLowerCase();
+      let section = SECTIONS.find((s) => s.id === activeSectionId);
+      if (!section) section = SECTIONS[0];
+
+      if (query) {
+        const filtered = SECTIONS.filter((s) => {
+          const text =
+            (s.title + " " + s.tag + " " + s.keywords + " " + s.html)
+              .replace(/<[^>]+>/g, " ")
+              .toLowerCase();
+          return text.includes(query);
+        });
+        if (filtered.length) section = filtered[0];
+      }
+
+      panelTitle.textContent = section.title;
+      panelTag.textContent = section.tag;
+      panelBody.innerHTML = section.html;
+      panelUpdated.textContent = "Last updated: " + section.updated;
+
+      attachCopyButtons();
+      attachFeedbackHandler();
+    }
+
+    function attachCopyButtons() {
+      document.querySelectorAll(".btn-copy").forEach((btn) => {
+        btn.onclick = () => {
+          const id = btn.dataset.copyTarget;
+          const el = document.getElementById(id);
+          if (!el) return;
+          const text = el.textContent.trim();
+          navigator.clipboard
+            .writeText(text)
+            .then(() => {
+              const original = btn.textContent;
+              btn.textContent = "Copied";
+              setTimeout(() => (btn.textContent = "Copy"), 1200);
+            })
+            .catch(() => alert("Copy failed. Please copy manually: " + text));
+        };
+      });
+    }
+
+    function attachFeedbackHandler() {
+      const form = document.getElementById("feedbackForm");
+      if (!form) return;
+      form.onsubmit = () => {
+        alert(
+          "Thank you. Your email app will open next so you can send your feedback to G2 Luxe."
+        );
+      };
+    }
+
+    searchInput.addEventListener("input", () => {
+      renderActiveSection();
+    });
+
+    /* ---------- RIGHT PANEL LOGIC ---------- */
+
+    function renderRecList(type) {
+      const items = RECOMMENDATIONS[type] || [];
+      recList.innerHTML = "";
+
+      if (!items.length) {
+        recList.innerHTML =
+          '<div style="font-size:12px;color:#6b7280;">No recommendations added yet for this category.</div>';
+        return;
+      }
+
+      items.forEach((item) => {
+        const card = document.createElement("div");
+        card.className = "rec-card";
+        card.innerHTML = `
+          <div>
+            <div class="rec-name">${item.name}</div>
+            <div class="rec-meta">${item.type}</div>
+          </div>
+          <div class="rec-action">
+            <div class="rec-meta">
+              <span>${item.eta}</span>
+              <span>Rating: ${item.rating}</span>
+              <span>${item.price}</span>
+            </div>
+            <a class="btn-small-link" href="${item.maps}" target="_blank" rel="noopener noreferrer">
+              Open in Maps
+            </a>
+          </div>
+        `;
+        recList.appendChild(card);
+      });
+    }
+
+    function setMapType(type) {
+      document.querySelectorAll(".map-pill").forEach((pill) => {
+        pill.classList.toggle("active", pill.dataset.type === type);
+      });
+      mapFrame.src = MAP_URLS[type] || MAP_URLS.food;
+      renderRecList(type);
+    }
+
+    mapTabs.querySelectorAll(".map-pill").forEach((pill) => {
+      pill.addEventListener("click", () => setMapType(pill.dataset.type));
+    });
+
+    /* ---------- INIT ---------- */
+
+    renderMainTabs();
+    renderActiveSection();
+    setMapType("food");
+  </script>
+</body>
+</html>
