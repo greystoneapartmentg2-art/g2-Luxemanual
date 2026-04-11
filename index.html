@@ -1,45 +1,283 @@
-<!-- Book Now Page Section (Styled to match your landing page) -->
-<section id="bookNow" style="padding: 40px; background-color: #ffffff; border-radius: 12px; max-width: 900px; margin: 40px auto; box-shadow: var(--shadow-soft); font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;">
-  <h2 style="text-align: center; margin-bottom: 20px; font-size: 24px; color: var(--navy); font-weight: 600;">Book Your Stay</h2>
-  <p style="text-align: center; font-size: 16px; color: var(--muted); margin-bottom: 30px;">Choose your preferred platform or contact us directly for personalized assistance.</p>
-  
-  <!-- Booking Links -->
-  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-bottom: 40px;">
-    <!-- Booking.com -->
-    <div style="flex: 1 1 200px; min-width: 200px; text-align: center;">
-      <h3 style="color: var(--navy); margin-bottom: 10px;">Book via Booking.com</h3>
-      <a href="https://www.booking.com/your-apartment-listing" target="_blank" rel="noopener noreferrer" style="display: inline-block; padding: 12px 24px; background-color: var(--navy); color: #fff; border-radius: 8px; font-size: 16px; text-decoration: none; transition: background 0.3s;">
-        Reserve G2 Luxe
-      </a>
-    </div>
-    <!-- Hotels.com -->
-    <div style="flex: 1 1 200px; min-width: 200px; text-align: center;">
-      <h3 style="color: var(--navy); margin-bottom: 10px;">Book via Hotels.com</h3>
-      <a href="https://www.hotels.com/your-hotel-listing" target="_blank" rel="noopener noreferrer" style="display: inline-block; padding: 12px 24px; background-color: var(--navy); color: #fff; border-radius: 8px; font-size: 16px; text-decoration: none; transition: background 0.3s;">
-        Reserve G2 Luxe
-      </a>
-    </div>
-  </div>
+<html lang="en"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>G2 Apartments - Premium Living</title>
 
-  <!-- Contact Options -->
-  <div style="text-align: center; margin-bottom: 30px;">
-    <h3 style="color: var(--navy); margin-bottom: 10px;">Contact Us Directly</h3>
-    <a href="mailto:greystoneapartmentg2@gmail.com" style="display: inline-block; margin: 10px; padding: 12px 24px; background-color: #0d2144; color: #fff; border-radius: 8px; font-size: 16px; text-decoration: none; transition: background 0.3s;">
-      Send Email
-    </a>
-    <a href="https://wa.me/2348166576005?text=Hi%20Queen,%20I%20would%20like%20assistance%20with%20booking." target="_blank" rel="noopener noreferrer" style="display: inline-block; margin: 10px; padding: 12px 24px; background-color: #0d2144; color: #fff; border-radius: 8px; font-size: 16px; text-decoration: none; transition: background 0.3s;">
-      Reach Queen via WhatsApp
-    </a>
-  </div>
+<!-- Google Fonts for a premium look -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;display=swap">
 
-  <!-- Payment Info -->
-  <div style="background-color: #f3f4f6; padding: 20px; border-radius: 10px; max-width: 700px; margin: 0 auto; border: 1px solid #e5e7eb;">
-    <h3 style="text-align: center; margin-bottom: 15px; font-size: 20px; color: var(--navy); font-weight: 600;">Payment Details</h3>
-    <ul style="list-style: none; font-size: 14px; color: var(--muted); line-height: 1.6;">
-      <li><strong>Account Name:</strong> Greystone and Cable Limited</li>
-      <li><strong>Account Number:</strong> 0126922682</li>
-      <li><strong>Bank:</strong> Wema Bank</li>
-      <li style="margin-top:8px;"><em>Please ensure transfers are completed before your arrival or booking date.</em></li>
-    </ul>
+<style>
+:root {
+  --bg: #0a0a0a; /* Darker background for luxury feel */
+  --bg-soft: #1a1a1a;
+  --text: #f0f0f0;f
+  --muted: #aaa;
+  --accent: #bfa14d; /* Metallic gold */
+  --card: rgba(255, 255, 255, 0.05);
+  --border: rgba(255, 255, 255, 0.1);
+  --shadow: rgba(0, 0, 0, 0.3);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  transition: background 0.3s ease;
+}
+
+/* Container */
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+/* Section spacing */
+.section {
+  padding: 60px 0;
+}
+
+/* HERO */
+.hero {
+  height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.75)),
+    url('Images/living-room.jpg') center/cover no-repeat;
+  position: relative;
+}
+
+.hero-content {
+  max-width: 700px;
+  padding: 0 20px;
+}
+
+.hero h1 {
+  font-size: 48px;
+  margin-bottom: 16px;
+  font-weight: 600;
+  color: #f0f0f0;
+}
+
+.hero p {
+  font-size: 16px;
+  color: var(--muted);
+  margin-bottom: 24px;
+}
+
+.btn {
+  padding: 12px 24px;
+  border-radius: 30px;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.btn:hover {
+  background: var(--accent);
+  color: #000;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+/* Headings */
+.section-title {
+  font-size: 24px;
+  margin-bottom: 24px;
+  font-weight: 600;
+  color: #f0f0f0;
+  text-align: center;
+}
+
+/* Grid layout */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+/* Card */
+.card {
+  background: var(--card);
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 12px var(--shadow);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px var(--shadow);
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.card img:hover {
+  transform: scale(1.05);
+}
+
+.card-content {
+  padding: 16px;
+}
+
+.card h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #f0f0f0;
+}
+
+.card p {
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
+/* Features & Testimonials */
+.features, .testimonials {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.feature, .testimonial {
+  background: var(--card);
+  padding: 16px;
+  border-radius: 12px;
+  font-size: 14px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  transition: box-shadow 0.3s;
+}
+
+.feature:hover, .testimonial:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+}
+
+/* CTA */
+.cta {
+  text-align: center;
+  background: var(--bg-soft);
+  padding: 50px 20px;
+  border-radius: 12px;
+  margin-top: 40px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+.cta h2 {
+  font-size: 24px;
+  margin-bottom: 16px;
+  font-weight: 600;
+  color: #f0f0f0;
+}
+
+footer {
+  text-align: center;
+  font-size: 12px;
+  color: var(--muted);
+  padding: 30px 0;
+  margin-top: 40px;
+}
+
+/* Responsive adjustments */
+@media(max-width:768px){
+  .hero h1 {
+    font-size: 32px;
+  }
+  .section-title {
+    font-size: 20px;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-content">
+    <h1>Luxury Living, Redefined</h1>
+    <p>Premium short-stay apartments designed for comfort and elegance.</p>
+    <a href="#apartments" class="btn">Explore Apartments</a>
   </div>
-</section>
+</div>
+
+<!-- APARTMENTS -->
+<div class="section container" id="apartments">
+  <h2 class="section-title">Our Apartments</h2>
+  <div class="grid">
+    <div class="card">
+      <img src="Images/living-room.jpg" alt="Living room of G2 Luxe">
+      <div class="card-content">
+        <h3>G2 Luxe</h3>
+        <p>Victoria Island · 2 Bedroom</p>
+        <a href="guest-guide.html" class="btn">View</a>
+      </div>
+    </div>
+    <div class="card">
+      <img src="Images/living-room2.jpg" alt="Living room of G2 Residence">
+      <div class="card-content">
+        <h3>B3 Channel Point</h3>
+        <p>Ikeja · Premium Stay</p>
+        <a href="guest-guide.html" class="btn">View</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- WHY STAY WITH US -->
+<div class="section container">
+  <h2 class="section-title">Why Stay With Us</h2>
+  <div class="features">
+    <div class="feature">24/7 Electricity</div>
+    <div class="feature">Fast WiFi</div>
+    <div class="feature">Luxury Interiors</div>
+  </div>
+</div>
+
+<!-- GUEST REVIEWS -->
+<div class="section container">
+  <h2 class="section-title">Guest Reviews</h2>
+  <div class="testimonials">
+    <div class="testimonial">Clean, stylish and very comfortable.</div>
+    <div class="testimonial">Exactly as shown, very premium feel.</div>
+    <div class="testimonial">Great experience, smooth stay.</div>
+  </div>
+</div>
+
+<!-- CALL TO ACTION -->
+<div class="section container">
+  <div class="cta">
+    <h2>Ready to Book?</h2>
+    <a href="Book.html" class="btn">Book Now</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  © 2026 G2 Apartments
+</footer>
+
+
+
+</body></html>
