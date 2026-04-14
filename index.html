@@ -412,7 +412,7 @@
       gap: 10px;
     }
 
-    .panel-body {
+    /* .panel-body {
       max-height: 200px;
       overflow-y: auto;
       transition: max-height 0.3s;
@@ -422,6 +422,16 @@
       color: rgb(17, 24, 39);
       padding-right: 0px;
       flex-direction: column;
+    } */
+
+    .panel-body {
+      font-size: 13px;
+      line-height: 1.6;
+      color: #111827;
+      /* allow full height, page scrolls instead of clipping */
+      max-height: none;
+      overflow: visible;
+      padding-right: 0;
     }
     
     .panel-title {
