@@ -66,8 +66,8 @@
     /* LEFT COLUMN (BRAND) */
 
     .left {
-      background: linear-gradient(155deg, var(--navy), #020819);
-      color: #f9fafb;
+      background: rgb(10, 10, 10);
+      color: rgb(249, 250, 251);
       padding: 24px 22px 20px;
       display: flex;
       flex-direction: column;
@@ -258,6 +258,7 @@
     /* RIGHT COLUMN (CONTENT) */
 
     .right {
+      height: 100%;
       padding: 18px 20px 10px;
       background: var(--bg);
       display: flex;
@@ -384,23 +385,25 @@
     /* Layout: content + map */
 
     .cards-area {
-      flex: 1;
-      display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.6fr);
+      flex-direction: column;
+      height: 100%;
+      flex: 1 1 0%;
+      display: flex;
+      grid-template-columns: minmax(0px, 1.2fr) minmax(0px, 1.6fr);
       gap: 14px;
       margin-top: 4px;
       min-height: 320px;
     }
 
     .panel {
-      background: #ffffff;
+      width: 100%;
+      object-fit: cover;
+      flex: 1 1 0%;
+      height: 100%;
       border-radius: var(--radius-lg);
       box-shadow: var(--shadow-subtle);
-      padding: 14px 15px 14px;
-      display: flex;
-      flex-direction: column;
+      padding: 14px 15px;
       gap: 10px;
-      border: 1px solid rgba(229, 231, 235, 0.85);
     }
 
     .panel-header {
