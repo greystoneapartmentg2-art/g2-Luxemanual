@@ -51,14 +51,16 @@
 
     .shell {
       width: 100%;
-      background: rgb(255, 255, 255);
+      border-radius: 28px;
+      background: #ffffff;
       box-shadow: var(--shadow-soft);
       overflow: hidden;
       display: grid;
-      grid-template-columns: minmax(0px, 1.05fr) minmax(0px, 2fr);
+      grid-template-columns: minmax(0, 1.05fr) minmax(0, 2fr);
       min-height: 560px;
-      margin: 0px auto;
+      margin: 0 auto;
     }
+
 
     /* LEFT COLUMN (BRAND) */
 
@@ -428,6 +430,7 @@
       align-items: center;
       gap: 8px;
     }
+    
 
     .panel-title-mark {
       width: 12px;
@@ -440,13 +443,13 @@
       font-size: 11px;
       color: var(--muted);
     }
-
+      
     .pill-small {
       font-size: 11px;
       padding: 3px 8px;
       border-radius: 999px;
-      background: #eff6ff;
-      color: #1d4ed8;
+      background: rgb(239, 246, 255);
+      color: rgb(29, 78, 216);
       white-space: nowrap;
     }
 
